@@ -53,9 +53,11 @@ startButton.addEventListener('click', startButtonHandler);
 function startButtonHandler() {
   const timerInterval = setInterval(fillTime, 1000);
   inputCurrent.setAttribute('disabled', true);
+  startButton.setAttribute('disabled', true);
   setTimeout(() => {
     clearInterval(timerInterval);
     inputCurrent.removeAttribute('disabled');
+    startButton.removeAttribute('disabled');
   }, userSelectedDate - Date.now());
 }
 

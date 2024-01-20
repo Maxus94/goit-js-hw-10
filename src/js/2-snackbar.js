@@ -4,18 +4,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const form = document.querySelector('.form');
 form.addEventListener('submit', submitHandler);
 function submitHandler(evt) {
-  evt.preventDefault();
-  // if(!(form.elements.delay.value) || !(form.elements.state.value)){
-  //   iziToast.show({
-  //     message: `You forgot important data`,
-  //     close: true,
-  //     backgroundColor: '#FFA000',
-  //     messageColor: 'white',
-  //     messageSize: 20,
-  //     //timeout: 0,
-  //     position: 'topRight', // bottomRight, bottomLeft, topRight, topLeft, topCenter, bottomCenter, center
-  //   });
-  // }
+  evt.preventDefault();  
   createPromise(form.elements.delay.value, form.elements.state.value)
     .then(delay => {
       console.log(`✅ Fulfilled promise in ${delay}ms`);
